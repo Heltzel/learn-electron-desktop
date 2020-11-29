@@ -4,8 +4,8 @@ const { app, BrowserWindow, ipcMain } = electron
 let mainWindow
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 800,
+    width: 1400,
+    height: 1000,
     webPreferences: {
       nodeIntegration: true,
     },

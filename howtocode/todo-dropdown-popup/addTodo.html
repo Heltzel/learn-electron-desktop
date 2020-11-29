@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="newTodo">Enter a new Todo</label>
+        <input type="text" class="form-control" id="newTodo" autofocus placeholder="New Todo Here">
+      </div>
+      <button type="submit" class="btn btn-success">Add Todo</button>
+  </div>
+
+  <script>
+    const electron = require('electron');
+    const {ipcRenderer}=electron;
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault()
+      const {value} = document.querySelector('input');
+      ipcRenderer.send('newTodo', value);
+    });
+  </script>
+
+</body>
